@@ -52,3 +52,20 @@ $ ./lxqt-control-theme-set ambiance
 
 * https://github.com/lxqt/liblxqt/blob/releases-0.12.x/lxqtsettings.cpp
 * https://github.com/lxqt/liblxqt/blob/releases-0.12.x/lxqtsettings.h
+
+
+## How to install new lxqt theme
+
+* https://github.com/samwhelp/play-ubuntu-18.04-plan/tree/master/prototype/lxqt-theme
+
+
+## Config File
+
+``` sh
+$ grep '^theme=' ~/.config/lxqt/lxqt.conf
+```
+
+
+## Themes
+
+* https://github.com/lxqt/lxqt/wiki/Themes
