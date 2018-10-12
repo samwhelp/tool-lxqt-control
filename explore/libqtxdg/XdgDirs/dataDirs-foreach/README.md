@@ -49,6 +49,7 @@ $ make
 * http://doc.qt.io/qt-5/qdebug.html#operator-lt-lt-25
 * http://doc.qt.io/qt-5/qstringlist.html#filter
 * http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-16
+* http://doc.qt.io/qt-5/containers.html#the-foreach-keyword
 
 
 ## pkg-config
