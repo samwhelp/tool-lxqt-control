@@ -40,7 +40,7 @@ $ make
 * https://github.com/lxqt/libqtxdg/blob/releases-3.1.x/qtxdg/xdgdirs.h#L106
 * https://github.com/lxqt/libqtxdg/blob/releases-3.1.x/qtxdg/xdgdirs.cpp#L261
 * https://github.com/lxqt/liblxqt/blob/releases-0.12.x/lxqtsettings.cpp#L611
-* http://doc.qt.io/qt-5/qdebug.html
+* http://doc.qt.io/qt-5/qdebug.html#operator-lt-lt-25
 * http://doc.qt.io/qt-5/qstringlist.html
 
 ## pkg-config
