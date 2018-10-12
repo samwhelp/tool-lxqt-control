@@ -40,6 +40,7 @@ $ make
 * https://github.com/lxqt/libqtxdg/blob/releases-3.1.x/qtxdg/xdgdirs.h#L86
 * https://github.com/lxqt/libqtxdg/blob/releases-3.1.x/qtxdg/xdgdirs.cpp#L237
 * https://github.com/lxqt/liblxqt/blob/releases-0.12.x/lxqtsettings.cpp#L610
+* http://doc.qt.io/qt-5/qdebug.html
 * http://doc.qt.io/qt-5/qstring.html
 * http://doc.qt.io/qt-5/custom-types.html
 * http://doc.qt.io/qt-5/qmetatype.html
