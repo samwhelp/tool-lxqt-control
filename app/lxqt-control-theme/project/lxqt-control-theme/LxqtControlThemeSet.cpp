@@ -29,38 +29,30 @@ int Set::run() {
 
 	LXQt::Settings *settings = new LXQt::Settings("lxqt");
 
-	QString old_theme = settings->value("theme").toString();
+	QString old_theme_name = settings->value("theme").toString();
 
-	out << "Old: " << old_theme << endl;
+	out << "Old: " << old_theme_name << endl;
 
-	//QString new_theme = "ambiance";
-	new_theme = new_theme.trimmed();
-	if (new_theme.length() == 0) {
-		new_theme = "ambiance";
-	}
-
-	settings->setValue("theme", new_theme);
+	settings->setValue("theme", getNewThemeName());
 
 	settings->sync();
 
-	out << "New: " << new_theme << endl;
+	out << "New: " << getNewThemeName() << endl;
 
 	return 0;
 }
 
-bool Set::isValidThemeName (QString theme_name) {
-
-	const QList<LXQt::LXQtTheme> themes = LXQt::LXQtTheme::allThemes();
-
-	foreach (const LXQt::LXQtTheme &theme, themes) {
-		QString the_name = theme.name();
-
-		if (theme_name == the_name) {
-			return true;
-		}
+QString Set::getNewThemeName () {
+	if (_NewThemeName.length() == 0) {
+		setNewThemeName("ambiance");
 	}
-
-	return false;
+	return _NewThemeName;
 }
+
+Set &Set::setNewThemeName (QString val) {
+	_NewThemeName = val.trimmed();
+	return *this;
+}
+
 
 } // namespace LxqtControlTheme

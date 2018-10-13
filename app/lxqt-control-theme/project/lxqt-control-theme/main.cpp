@@ -6,7 +6,7 @@
 
 #include <LXQt/SingleApplication>
 
-
+#include "LxqtControlThemeUtil.h"
 #include "LxqtControlThemeList.h"
 #include "LxqtControlThemeGet.h"
 #include "LxqtControlThemeSet.h"
@@ -77,8 +77,8 @@ int main (int argc, char **argv)
 				//out << "Command: " << command << endl;
 				//out << "ThemeName: " << args.value(1) << endl;
 				LxqtControlTheme::Set set;
-				set.new_theme = args.value(1);
-				if (set.isValidThemeName(set.new_theme) == false) {
+				set.setNewThemeName(args.value(1));
+				if (LxqtControlTheme::Util::isValidThemeName(set.getNewThemeName()) == false) {
 					out << endl;
 					out << "=== theme_name invalid! ===" << endl;
 					out << endl;

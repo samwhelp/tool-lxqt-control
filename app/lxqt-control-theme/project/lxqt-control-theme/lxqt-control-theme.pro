@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Input
 SOURCES += main.cpp\
+	LxqtControlThemeUtil.cpp\
 	LxqtControlThemeList.cpp\
 	LxqtControlThemeGet.cpp\
 	LxqtControlThemeSet.cpp\

@@ -7,9 +7,11 @@ class Set {
 public:
 	Set ();
 	~Set ();
-	virtual int run();
-	QString new_theme;
-	bool isValidThemeName(QString theme_name);
+	virtual int run ();
+	QString _NewThemeName;
+	QString getNewThemeName ();
+	Set &setNewThemeName (QString val);
+
 
 //protected:
 
