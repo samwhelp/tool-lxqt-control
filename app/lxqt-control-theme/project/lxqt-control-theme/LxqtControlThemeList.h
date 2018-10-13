@@ -11,9 +11,9 @@ public:
 	bool _IsPrintPath = false;
 	bool getIsPrintPath ();
 	List &setIsPrintPath (bool val);
-	bool _IsPlusPath = false;
-	bool getIsPlusPath ();
-	List &setIsPlusPath (bool val);
+	bool _IsAppendPath = false;
+	bool getIsAppendPath ();
+	List &setIsAppendPath (bool val);
 
 //protected:
 

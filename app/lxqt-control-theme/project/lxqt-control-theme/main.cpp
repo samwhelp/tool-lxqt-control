@@ -46,6 +46,18 @@ int main (int argc, char **argv)
 		"$ lxqt-control-theme set ambiance\n"
 	);
 
+	QCommandLineOption option_print_path(
+		QStringList() << "p" << "print-path",
+		"Print path only."
+	);
+	parser.addOption(option_print_path);
+
+	QCommandLineOption option_append_path(
+		QStringList() << "a" << "append-path",
+		"Print theme name and path."
+	);
+	parser.addOption(option_append_path);
+
 	parser.process(app);
 
 
@@ -62,15 +74,19 @@ int main (int argc, char **argv)
 		if (command == "list") {
 			//out << "Command: " << command << endl;
 			LxqtControlTheme::List list;
-			//list.setIsPlusPath(true);
-			//list.setIsPrintPath(true);
-			list.run();
+			list
+				.setIsAppendPath(parser.isSet("append-path"))
+				.setIsPrintPath(parser.isSet("print-path"))
+				.run()
+			;
 		} else if (command == "get") {
 			//out << "Command: " << command << endl;
 			LxqtControlTheme::Get get;
-			//get.setIsPlusPath(true);
-			//get.setIsPrintPath(true);
-			get.run();
+			get
+				.setIsAppendPath(parser.isSet("append-path"))
+				.setIsPrintPath(parser.isSet("print-path"))
+				.run()
+			;
 		} else if (command == "set") {
 			if (args.size() < 2) {
 				out << endl;

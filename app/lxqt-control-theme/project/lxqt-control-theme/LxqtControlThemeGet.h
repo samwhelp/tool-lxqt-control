@@ -11,9 +11,9 @@ public:
 	bool _IsPrintPath = false;
 	bool getIsPrintPath ();
 	Get &setIsPrintPath (bool val);
-	bool _IsPlusPath = false;
-	bool getIsPlusPath ();
-	Get &setIsPlusPath (bool val);
+	bool _IsAppendPath = false;
+	bool getIsAppendPath ();
+	Get &setIsAppendPath (bool val);
 
 //protected:
 

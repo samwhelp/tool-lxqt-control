@@ -31,7 +31,7 @@ int Get::run () {
 
 	LXQt::LXQtTheme theme(current_theme_name);
 
-	if (getIsPlusPath()) {
+	if (getIsAppendPath()) {
 		out << theme.name() << " : "  << theme.path() << endl;
 	} else if (getIsPrintPath()) {
 		out << theme.path() << endl;
@@ -51,12 +51,12 @@ Get &Get::setIsPrintPath (bool val) {
 	return *this;
 }
 
-bool Get::getIsPlusPath () {
-	return _IsPlusPath;
+bool Get::getIsAppendPath () {
+	return _IsAppendPath;
 }
 
-Get &Get::setIsPlusPath (bool val) {
-	_IsPlusPath = val;
+Get &Get::setIsAppendPath (bool val) {
+	_IsAppendPath = val;
 	return *this;
 }
 

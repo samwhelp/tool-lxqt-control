@@ -30,7 +30,7 @@ int List::run () {
 
 	foreach (const LXQt::LXQtTheme &theme, themes) {
 
-		if (getIsPlusPath()) {
+		if (getIsAppendPath()) {
 			out << theme.name() << " : "  << theme.path() << endl;
 		} else if (getIsPrintPath()) {
 			out << theme.path() << endl;
@@ -53,12 +53,12 @@ List &List::setIsPrintPath (bool val) {
 	return *this;
 }
 
-bool List::getIsPlusPath () {
-	return _IsPlusPath;
+bool List::getIsAppendPath () {
+	return _IsAppendPath;
 }
 
-List &List::setIsPlusPath (bool val) {
-	_IsPlusPath = val;
+List &List::setIsAppendPath (bool val) {
+	_IsAppendPath = val;
 	return *this;
 }
 
