@@ -7,7 +7,13 @@ class List {
 public:
 	List ();
 	~List ();
-	virtual int run();
+	virtual int run ();
+	bool _IsPrintPath = false;
+	bool getIsPrintPath ();
+	List &setIsPrintPath (bool val);
+	bool _IsPlusPath = false;
+	bool getIsPlusPath ();
+	List &setIsPlusPath (bool val);
 
 //protected:
 

@@ -11,15 +11,15 @@
 
 namespace LxqtControlTheme {
 
-Set::Set() {
+Set::Set () {
 
 }
 
-Set::~Set() {
+Set::~Set () {
 
 }
 
-int Set::run() {
+int Set::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
 	//qDebug() << "Set::run" << endl;
 

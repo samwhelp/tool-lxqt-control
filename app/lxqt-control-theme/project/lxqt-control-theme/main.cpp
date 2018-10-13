@@ -62,10 +62,14 @@ int main (int argc, char **argv)
 		if (command == "list") {
 			//out << "Command: " << command << endl;
 			LxqtControlTheme::List list;
+			//list.setIsPlusPath(true);
+			//list.setIsPrintPath(true);
 			list.run();
 		} else if (command == "get") {
 			//out << "Command: " << command << endl;
 			LxqtControlTheme::Get get;
+			//get.setIsPlusPath(true);
+			//get.setIsPrintPath(true);
 			get.run();
 		} else if (command == "set") {
 			if (args.size() < 2) {

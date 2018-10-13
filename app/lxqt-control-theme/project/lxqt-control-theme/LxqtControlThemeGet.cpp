@@ -10,15 +10,15 @@
 
 namespace LxqtControlTheme {
 
-Get::Get() {
+Get::Get () {
 
 }
 
-Get::~Get() {
+Get::~Get () {
 
 }
 
-int Get::run() {
+int Get::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
 	//qDebug() << "Get::run" << endl;
 
@@ -27,11 +27,37 @@ int Get::run() {
 
 	LXQt::Settings *settings = new LXQt::Settings("lxqt");
 
-	QString current_theme = settings->value("theme").toString();
+	QString current_theme_name = settings->value("theme").toString();
 
-	out << current_theme << endl;
+	LXQt::LXQtTheme theme(current_theme_name);
+
+	if (getIsPlusPath()) {
+		out << theme.name() << " : "  << theme.path() << endl;
+	} else if (getIsPrintPath()) {
+		out << theme.path() << endl;
+	} else {
+		out << theme.name() << endl;
+	}
 
 	return 0;
+}
+
+bool Get::getIsPrintPath () {
+	return _IsPrintPath;
+}
+
+Get &Get::setIsPrintPath (bool val) {
+	_IsPrintPath = val;
+	return *this;
+}
+
+bool Get::getIsPlusPath () {
+	return _IsPlusPath;
+}
+
+Get &Get::setIsPlusPath (bool val) {
+	_IsPlusPath = val;
+	return *this;
 }
 
 } // namespace LxqtControlTheme

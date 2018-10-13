@@ -11,15 +11,15 @@
 
 namespace LxqtControlTheme {
 
-List::List() {
+List::List () {
 
 }
 
-List::~List() {
+List::~List () {
 
 }
 
-int List::run() {
+int List::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
 	//qDebug() << "List::run" << endl;
 
@@ -28,15 +28,38 @@ int List::run() {
 
 	const QList<LXQt::LXQtTheme> themes = LXQt::LXQtTheme::allThemes();
 
-	foreach(const LXQt::LXQtTheme &theme, themes) {
-		QString theme_name = theme.name();
-		//theme_name[0] = theme_name[0].toTitleCase();
-		out << theme_name << endl;
+	foreach (const LXQt::LXQtTheme &theme, themes) {
+
+		if (getIsPlusPath()) {
+			out << theme.name() << " : "  << theme.path() << endl;
+		} else if (getIsPrintPath()) {
+			out << theme.path() << endl;
+		} else {
+			out << theme.name() << endl;
+		}
 
 	}
 
 
 	return 0;
+}
+
+bool List::getIsPrintPath () {
+	return _IsPrintPath;
+}
+
+List &List::setIsPrintPath (bool val) {
+	_IsPrintPath = val;
+	return *this;
+}
+
+bool List::getIsPlusPath () {
+	return _IsPlusPath;
+}
+
+List &List::setIsPlusPath (bool val) {
+	_IsPlusPath = val;
+	return *this;
 }
 
 } // namespace LxqtControlTheme

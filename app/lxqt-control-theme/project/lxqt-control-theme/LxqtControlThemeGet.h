@@ -7,7 +7,13 @@ class Get {
 public:
 	Get ();
 	~Get ();
-	virtual int run();
+	virtual int run ();
+	bool _IsPrintPath = false;
+	bool getIsPrintPath ();
+	Get &setIsPrintPath (bool val);
+	bool _IsPlusPath = false;
+	bool getIsPlusPath ();
+	Get &setIsPlusPath (bool val);
 
 //protected:
 
