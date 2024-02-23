@@ -64,15 +64,15 @@ int main (int argc, char **argv)
 	QStringList args = parser.positionalArguments();
 
 	if (args.isEmpty()) {
-		out << endl;
-		out << "=== command needed! ===" << endl;
-		out << endl;
+		out << Qt::endl;
+		out << "=== command needed! ===" << Qt::endl;
+		out << Qt::endl;
 		parser.showHelp();
 	} else {
 
 		QString command = args.first();
 		if (command == "list") {
-			//out << "Command: " << command << endl;
+			//out << "Command: " << command << Qt::endl;
 			LxqtControlTheme::List list;
 			list
 				.setIsAppendPath(parser.isSet("append-path"))
@@ -80,7 +80,7 @@ int main (int argc, char **argv)
 				.run()
 			;
 		} else if (command == "get") {
-			//out << "Command: " << command << endl;
+			//out << "Command: " << command << Qt::endl;
 			LxqtControlTheme::Get get;
 			get
 				.setIsAppendPath(parser.isSet("append-path"))
@@ -89,28 +89,28 @@ int main (int argc, char **argv)
 			;
 		} else if (command == "set") {
 			if (args.size() < 2) {
-				out << endl;
-				out << "=== theme_name needed! ===" << endl;
-				out << endl;
+				out << Qt::endl;
+				out << "=== theme_name needed! ===" << Qt::endl;
+				out << Qt::endl;
 				//parser.showHelp();
 			} else {
-				//out << "Command: " << command << endl;
-				//out << "ThemeName: " << args.value(1) << endl;
+				//out << "Command: " << command << Qt::endl;
+				//out << "ThemeName: " << args.value(1) << Qt::endl;
 				LxqtControlTheme::Set set;
 				set.setNewThemeName(args.value(1));
 				if (LxqtControlTheme::Util::isValidThemeName(set.getNewThemeName()) == false) {
-					out << endl;
-					out << "=== theme_name invalid! ===" << endl;
-					out << endl;
+					out << Qt::endl;
+					out << "=== theme_name invalid! ===" << Qt::endl;
+					out << Qt::endl;
 					//parser.showHelp();
 				} else {
 					set.run();
 				}
 			}
 		} else {
-			out << endl;
-			out << "=== command invalid! ===" << endl;
-			out << endl;
+			out << Qt::endl;
+			out << "=== command invalid! ===" << Qt::endl;
+			out << Qt::endl;
 			parser.showHelp();
 		}
 

@@ -21,7 +21,7 @@ List::~List () {
 
 int List::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
-	//qDebug() << "List::run" << endl;
+	//qDebug() << "List::run" << Qt::endl;
 
 	// http://doc.qt.io/qt-5/qtextstream.html#details
 	QTextStream out(stdout);
@@ -31,11 +31,11 @@ int List::run () {
 	foreach (const LXQt::LXQtTheme &theme, themes) {
 
 		if (getIsAppendPath()) {
-			out << theme.name() << " : "  << theme.path() << endl;
+			out << theme.name() << " : "  << theme.path() << Qt::endl;
 		} else if (getIsPrintPath()) {
-			out << theme.path() << endl;
+			out << theme.path() << Qt::endl;
 		} else {
-			out << theme.name() << endl;
+			out << theme.name() << Qt::endl;
 		}
 
 	}

@@ -21,7 +21,7 @@ Set::~Set () {
 
 int Set::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
-	//qDebug() << "Set::run" << endl;
+	//qDebug() << "Set::run" << Qt::endl;
 
 	// http://doc.qt.io/qt-5/qtextstream.html#details
 	QTextStream out(stdout);
@@ -31,13 +31,13 @@ int Set::run () {
 
 	QString old_theme_name = settings->value("theme").toString();
 
-	out << "Old: " << old_theme_name << endl;
+	out << "Old: " << old_theme_name << Qt::endl;
 
 	settings->setValue("theme", getNewThemeName());
 
 	settings->sync();
 
-	out << "New: " << getNewThemeName() << endl;
+	out << "New: " << getNewThemeName() << Qt::endl;
 
 	return 0;
 }

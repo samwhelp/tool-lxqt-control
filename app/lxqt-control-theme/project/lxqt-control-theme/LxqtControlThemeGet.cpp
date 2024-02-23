@@ -20,7 +20,7 @@ Get::~Get () {
 
 int Get::run () {
 	// http://doc.qt.io/qt-5/qdebug.html
-	//qDebug() << "Get::run" << endl;
+	//qDebug() << "Get::run" << Qt::endl;
 
 	// http://doc.qt.io/qt-5/qtextstream.html#details
 	QTextStream out(stdout);
@@ -32,11 +32,11 @@ int Get::run () {
 	LXQt::LXQtTheme theme(current_theme_name);
 
 	if (getIsAppendPath()) {
-		out << theme.name() << " : "  << theme.path() << endl;
+		out << theme.name() << " : "  << theme.path() << Qt::endl;
 	} else if (getIsPrintPath()) {
-		out << theme.path() << endl;
+		out << theme.path() << Qt::endl;
 	} else {
-		out << theme.name() << endl;
+		out << theme.name() << Qt::endl;
 	}
 
 	return 0;
