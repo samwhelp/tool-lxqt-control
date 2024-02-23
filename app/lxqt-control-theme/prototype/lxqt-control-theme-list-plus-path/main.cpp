@@ -14,7 +14,7 @@ int main (int argc, char **argv)
 	const QList<LXQt::LXQtTheme> themes = LXQt::LXQtTheme::allThemes();
 
 	foreach(const LXQt::LXQtTheme &theme, themes) {
-		out << theme.name() << " : " << theme.path() << endl;
+		out << theme.name() << " : " << theme.path() << Qt::endl;
 	}
 
 	return 0;

@@ -15,7 +15,7 @@ int main (int argc, char **argv)
 	QTextStream out(stdout);
 
 	if (argc < 2) {
-		out << "Must assign theme name!" << endl;
+		out << "Must assign theme name!" << Qt::endl;
 		return 1;
 	}
 
@@ -23,7 +23,7 @@ int main (int argc, char **argv)
 
 	QString old_theme = settings->value("theme").toString();
 
-	out << "Old: " << old_theme << endl;
+	out << "Old: " << old_theme << Qt::endl;
 
 	QString new_theme = "ambiance";
 
@@ -33,7 +33,7 @@ int main (int argc, char **argv)
 
 	settings->sync();
 
-	out << "New: " << new_theme << endl;
+	out << "New: " << new_theme << Qt::endl;
 
 	return 0;
 

@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 
 	foreach (const QString &dir, XdgDirs::dataDirs()) {
 		//qDebug() << dir;
-		out << dir << endl;
+		out << dir << Qt::endl;
 	}
 	return 0;
 }

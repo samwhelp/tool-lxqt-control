@@ -17,7 +17,7 @@ int main (int argc, char **argv)
 	{
 		QString theme_name = theme.name();
 		//theme_name[0] = theme_name[0].toTitleCase();
-		out << theme_name << endl;
+		out << theme_name << Qt::endl;
 
 	}
 

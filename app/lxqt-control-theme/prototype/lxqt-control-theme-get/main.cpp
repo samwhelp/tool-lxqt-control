@@ -18,7 +18,7 @@ int main (int argc, char **argv)
 
 	QString current_theme = settings->value("theme").toString();
 
-	out << current_theme << endl;
+	out << current_theme << Qt::endl;
 
 	return 0;
 
