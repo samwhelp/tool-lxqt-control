@@ -7,7 +7,7 @@ $ sudo apt-get install build-essential
 ```
 
 ``` sh
-$ sudo apt-get install liblxqt0-dev
+$ sudo apt-get install liblxqt1-dev
 ```
 
 
@@ -74,4 +74,4 @@ $ grep '^theme=' ~/.config/lxqt/lxqt.conf
 
 ## Themes
 
-* https://github.com/lxqt/lxqt/wiki/Themes
+* https://github.com/lxqt/lxqt/wiki/Theming
