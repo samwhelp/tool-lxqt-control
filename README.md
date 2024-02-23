@@ -1,10 +1,14 @@
 
+
 # tool-lxqt-control
 
-tool-lxqt-control
+| Link | GitHub |
+| ---- | ------ |
+| [tool-lxqt-control](https://samwhelp.github.io/tool-lxqt-control/) | [GitHub](https://github.com/samwhelp/tool-lxqt-control) |
 
 
-## [lxqt-control-theme](app/lxqt-control-theme)
+## Project
 
-
-## [create-lxqt-theme](demo/lxqt-theme)
+| Project |
+| ------- |
+| [lxqt-control-theme](https://github.com/samwhelp/tool-lxqt-control/tree/main/app/lxqt-control-theme/project/lxqt-control-theme)
