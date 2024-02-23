@@ -20,7 +20,7 @@ int main (int argc, char **argv)
 	LXQt::SingleApplication app(argc, argv);
 	app.setApplicationVersion(QStringLiteral("0.1"));
 
-	//http://doc.qt.io/qt-5/qcommandlineparser.html
+	//http://doc.qt.io/qt-5/qactionlineparser.html
 	QCommandLineParser parser;
 	parser.setApplicationDescription(
 		QStringLiteral("LXQt Control Theme")
@@ -29,13 +29,13 @@ int main (int argc, char **argv)
 	parser.addVersionOption();
 	parser.addHelpOption();
 
-	//http://doc.qt.io/qt-5/qcommandlineparser.html#addPositionalArgument
-	//http://doc.qt.io/qt-5/qcommandlineparser.html#clearPositionalArguments
+	//http://doc.qt.io/qt-5/qactionlineparser.html#addPositionalArgument
+	//http://doc.qt.io/qt-5/qactionlineparser.html#clearPositionalArguments
 	parser.addPositionalArgument(
-		"command",
-		"The command to execute.\n"
+		"action",
+		"The action to execute.\n"
 		"\n\n"
-		"Commands:\n"
+		"Actions:\n"
 		"list - available themes\n"
 		"get - current theme\n"
 		"set - new theme\n"
@@ -65,42 +65,59 @@ int main (int argc, char **argv)
 
 	if (args.isEmpty()) {
 		out << Qt::endl;
-		out << "=== command needed! ===" << Qt::endl;
+		out << "##" << Qt::endl;
+		out << "## ## action needed!" << Qt::endl;
+		out << "##" << Qt::endl;
+		out << "## Examples: " << Qt::endl;
+		out << "##	$ lxqt-control-theme list" << Qt::endl;
+		out << "##	$ lxqt-control-theme get" << Qt::endl;
+		out << "##	$ lxqt-control-theme set ambiance" << Qt::endl;
+		out << "##" << Qt::endl;
 		out << Qt::endl;
-		parser.showHelp();
+		//parser.showHelp();
 	} else {
 
-		QString command = args.first();
-		if (command == "list") {
-			//out << "Command: " << command << Qt::endl;
+		QString action = args.first();
+		if (action == "list") {
+			//out << "Command: " << action << Qt::endl;
 			LxqtControlTheme::List list;
 			list
 				.setIsAppendPath(parser.isSet("append-path"))
 				.setIsPrintPath(parser.isSet("print-path"))
 				.run()
 			;
-		} else if (command == "get") {
-			//out << "Command: " << command << Qt::endl;
+		} else if (action == "get") {
+			//out << "Command: " << action << Qt::endl;
 			LxqtControlTheme::Get get;
 			get
 				.setIsAppendPath(parser.isSet("append-path"))
 				.setIsPrintPath(parser.isSet("print-path"))
 				.run()
 			;
-		} else if (command == "set") {
+		} else if (action == "set") {
 			if (args.size() < 2) {
 				out << Qt::endl;
-				out << "=== theme_name needed! ===" << Qt::endl;
+				out << "##" << Qt::endl;
+				out << "## ## theme_name needed!" << Qt::endl;
+				out << "##" << Qt::endl;
+				out << "## Examples: " << Qt::endl;
+				out << "##	$ lxqt-control-theme set ambiance" << Qt::endl;
+				out << "##" << Qt::endl;
 				out << Qt::endl;
 				//parser.showHelp();
 			} else {
-				//out << "Command: " << command << Qt::endl;
+				//out << "Command: " << action << Qt::endl;
 				//out << "ThemeName: " << args.value(1) << Qt::endl;
 				LxqtControlTheme::Set set;
 				set.setNewThemeName(args.value(1));
 				if (LxqtControlTheme::Util::isValidThemeName(set.getNewThemeName()) == false) {
 					out << Qt::endl;
-					out << "=== theme_name invalid! ===" << Qt::endl;
+					out << "##" << Qt::endl;
+					out << "## ## theme_name invalid!" << Qt::endl;
+					out << "##" << Qt::endl;
+					out << "## Examples: " << Qt::endl;
+					out << "##	$ lxqt-control-theme list" << Qt::endl;
+					out << "##	$ lxqt-control-theme set ambiance" << Qt::endl;
 					out << Qt::endl;
 					//parser.showHelp();
 				} else {
@@ -109,9 +126,16 @@ int main (int argc, char **argv)
 			}
 		} else {
 			out << Qt::endl;
-			out << "=== command invalid! ===" << Qt::endl;
+			out << "##" << Qt::endl;
+			out << "## ## action invalid!" << Qt::endl;
+			out << "##" << Qt::endl;
+			out << "## Examples: " << Qt::endl;
+			out << "##	$ lxqt-control-theme list" << Qt::endl;
+			out << "##	$ lxqt-control-theme get" << Qt::endl;
+			out << "##	$ lxqt-control-theme set ambiance" << Qt::endl;
+			out << "##" << Qt::endl;
 			out << Qt::endl;
-			parser.showHelp();
+			//parser.showHelp();
 		}
 
 	}
